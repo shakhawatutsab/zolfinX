@@ -1,0 +1,101 @@
+.newsletter {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    &--alt {
+        @extend .newsletter;
+        border-radius: 10px 10px 0 10px;
+        .newsletter__button {
+            border-radius: 10px 10px 0 10px;
+        }
+    }
+    &__button {
+        min-width: max-content;
+    }
+    &__input {
+        border: none;
+        background: transparent;
+    }
+    &__divider {
+        position: relative;
+        @include xl-screen {
+            &::after {
+                content: '';
+                width: 1px;
+                height: 100%;
+                background: $border;
+                position: absolute;
+                right: -16px;
+            }
+        }
+    }
+}
+.zl-newsletter {
+    position: relative;
+    &--backdrop {
+        @include xl-screen {
+            padding-left: 15px;
+            padding-right: 15px;
+            z-index: 1;
+        }
+        &::before {
+            @include xl-screen {
+                content: "";
+                position: absolute;
+                top: calc(0px - 100px);
+                left: 0;
+                right: 0;
+                bottom: calc(0px - 95px);
+                background: $lambda;
+                z-index: -1;
+            }
+        }
+        &::after {
+            @include xl-screen {
+                content: "";
+                position: absolute;
+                top: calc(0px - 100px);
+                left: 0;
+                right: 0;
+                bottom: calc(0px - 95px);
+                background-image: url(../img/footer-shape.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 0.3;
+                z-index: -1;
+            }
+        }
+        &-corner {
+            position: relative;
+            &::before {
+                @include xl-screen {
+                    content: "";
+                    border-top: 20px solid transparent;
+                    border-bottom: 0px solid transparent;
+                    border-left: 20px solid darken($lambda, 20%);
+                    position: absolute;
+                    top: -100px;
+                    right: -35px;
+                }
+            }
+            &::after {
+                @include xl-screen {
+                    content: "";
+                    border-top: 0 solid transparent;
+                    border-bottom: 20px solid transparent;
+                    border-left: 20px solid darken($lambda, 20%);
+                    position: absolute;
+                    bottom: -95px;
+                    right: -35px;
+                }
+            }
+        }
+    }
+    &-7 {
+        background-image: url(../img/newsletter-bg.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

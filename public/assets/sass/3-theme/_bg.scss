@@ -1,0 +1,56 @@
+.t-bg-primary {
+    background: #3547bd;
+}
+.t-bg-secondary {
+    background: $secondary;
+}
+.t-bg-light {
+    background: $white;
+}
+.t-bg-light-2 {
+    background: $light-2;
+}
+.t-bg-beta {
+    background: $beta;
+}
+.t-bg-gamma {
+    background: $gamma;
+}
+.t-bg-delta {
+    background: $delta;
+}
+.t-bg-alpha {
+    background: $alpha;
+}
+.t-bg-lambda {
+    background: $lambda;
+}
+.t-bg-light-grad {
+    background-image: linear-gradient($light, $white);
+}
+.t-bg-eta {
+    background: $eta;
+}
+.t-bg-theta {
+    background: $theta;
+}
+.t-bg-kappa {
+    background: $kappa;
+}
+.t-bg-color-5 {
+    background: $color-5;
+}
+.t-bg-color-7 {
+    background: $color-7;
+}
+.t-bg-color-3 {
+    background: $color-3;
+}
+.t-bg-color-11 {
+    background: $color-11;
+}
+.t-lg-bg-color-11 {
+    @include lg-screen {
+        background: $color-11;
+    }
+}

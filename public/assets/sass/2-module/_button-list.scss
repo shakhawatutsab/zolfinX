@@ -1,0 +1,15 @@
+.zl-button-list {
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+        margin-right: 25px;
+        margin-bottom: 15px;
+        @include md-screen {
+            margin-bottom: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+}

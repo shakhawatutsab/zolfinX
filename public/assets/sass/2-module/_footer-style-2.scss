@@ -1,0 +1,29 @@
+.footer-style-2 {
+    .footer-top {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &__list {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            &-item {
+                margin-right: 15px;
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &__link {
+            padding: 20px 40px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            color: $heading-text;
+            font-weight: 700;
+            &:hover {
+                border: 1px solid $secondary;
+                background: $white;
+            }
+        }
+    }
+}

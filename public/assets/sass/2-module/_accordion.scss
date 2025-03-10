@@ -1,0 +1,42 @@
+.zol-accordion {
+    &__card {
+        border: none;
+        &-header {
+            border-bottom: none;
+            background: $light-2;
+        }
+        &-btn {
+            padding-right: 55px;
+            position: relative;
+            color: $heading-text;
+            font-size: 1.0625rem; //17px
+            &:hover {
+                color: $alpha;
+            }
+            @include md-screen {
+                font-size: 1.2rem; //19.2px
+            }
+            @include xl-screen {
+                font-size: 1.5rem; //24px
+            }
+            &-icon {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: $primary;
+                text-align: center;
+                color: $white;
+                transition: all .3s ease;
+                &:hover {
+                    color: $alpha;
+                }
+            }
+        }
+    }
+    .card-header:first-child {
+        border-radius: 0;
+    }
+}

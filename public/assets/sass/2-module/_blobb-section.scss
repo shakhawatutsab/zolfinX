@@ -1,0 +1,92 @@
+.zl-blobb-section {
+    position: relative;
+    z-index: 1;
+    &-1 {
+        &::before {
+            background: $color-17;
+        }
+    }
+    &-2 {
+        &::after {
+            background: $color-18;
+        }
+    }
+    &-top {
+        &::before {
+            top: -150px;
+        }
+        &-end {
+            &::after {
+                top: -150px;
+            }
+        }
+    }
+    &-bottom {
+        &::before {
+            bottom: -150px;
+        }
+        &-end {
+            &::after {
+                bottom: -150px;
+            }
+        }
+    }
+    &-left {
+        &::before {
+            left: 0;
+        }
+        &-end {
+            &::after {
+                left: 0;
+            }
+        }
+    }
+    &-right {
+        &::before {
+            right: 0;
+        }
+        &-end {
+            &::after {
+                right: 0;
+            }
+        }
+    }
+    &-center {
+        &::before {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &-end {
+            &::after {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    &::before {
+        @include xl-screen {
+            content: "";
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            display: inline-block;
+            position: absolute;
+            filter: blur(120px);
+            z-index: -1;
+        }
+    }
+    &::after {
+        @include xl-screen {
+            content: "";
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            display: inline-block;
+            position: absolute;
+            filter: blur(120px);
+            z-index: -1;
+        }
+    }
+}

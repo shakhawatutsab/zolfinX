@@ -1,0 +1,34 @@
+.service-slider {
+    &__item {
+        margin: 15px;
+        &:focus {
+            outline: none;
+        }
+    }
+    .slick-arrow {
+        position: absolute;
+        top: -65px;
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        text-align: center;
+        border: 2px solid rgba($primary, 0.1);
+        border-radius: 100%;
+        font-size: 20px;
+        line-height: 1;
+        transition: all .3s ease;
+        color: $heading-text;
+        background: $light;
+        &:hover {
+            background: $white;
+            border: 2px solid $primary;
+            color: $primary;
+        }
+    }
+    .slick-next {
+        right: 0;
+    }
+    .slick-prev {
+        right: 85px;
+    }
+}

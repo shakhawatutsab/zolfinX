@@ -1,0 +1,11 @@
+.brand {
+    width: 150px;
+    
+}
+.zl-brand {
+    &-border-right {
+        @include xl-screen {
+            border-right: 1px solid rgba($border, .3);
+        }
+    }
+}

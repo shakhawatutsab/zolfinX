@@ -1,0 +1,8 @@
+.award-slider {
+    &__item {
+        margin: 15px;
+        &:focus {
+            outline: none;
+        }
+    }
+}

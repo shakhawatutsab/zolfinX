@@ -1,0 +1,28 @@
+.service-list {
+    &__item {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__link {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        box-shadow: 0 5px 15px rgba($primary, .2);
+        @include md-screen {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        &:hover {
+            box-shadow: 0 5px 25px rgba($primary, .2);
+        }
+        &.active {
+            background: $alpha;
+            color: $white;
+        }
+    }
+}

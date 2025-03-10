@@ -1,0 +1,52 @@
+.work-process {
+    position: relative;
+    @include xli-screen {
+        &::after {
+            content: url("../img/work-process-shape.png");
+            position: absolute;
+            top: -54px;
+            right: -170px;
+        }
+        
+    }
+    &--last {
+        @include xli-screen {
+            &::after {
+                content: none;
+            }
+            
+        }
+    }
+    &-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        line-height: 80px;
+        text-align: center;
+        color: $white;
+        border-radius: 100%;
+        &--alpha {
+            background: $alpha;
+            box-shadow: 0 5px 15px rgba($alpha, 0.5);
+        }
+        &--primary {
+            background: $primary;
+            box-shadow: 0 5px 15px rgba($primary, 0.5);
+        }
+        &--delta {
+            background: $delta;
+            box-shadow: 0 5px 15px rgba($delta, 0.5);
+        }
+        &--epsilon {
+            background: $epsilon;
+            box-shadow: 0 5px 15px rgba($epsilon, 0.5);
+        }
+    }
+    &-wrapper {
+        padding-top: 60px;
+        @include xl-screen {
+            height: 300px;
+            padding-top: 120px;
+        }
+    }
+}

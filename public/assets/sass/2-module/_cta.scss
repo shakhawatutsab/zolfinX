@@ -1,0 +1,33 @@
+.zl-cta {
+    &__container {
+        border-radius: 15px;
+        background: $light-3;
+    }
+    &__left {
+        position: relative;
+        padding: 30px 15px;
+        height: 100%;
+        border-radius: 15px;
+        background: $white;
+        @include md-screen {
+            padding: 30px;
+        }
+        @include lg-screen {
+            padding: 50px;
+        }
+        @include lg-screen {
+            padding: 100px 60px;
+        }
+        &-img {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            bottom: 0;
+            right: 25px;
+            display: none;
+            @include lg-screen {
+                display: block;
+            }
+        }
+    }
+}

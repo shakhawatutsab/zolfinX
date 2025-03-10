@@ -1,0 +1,10 @@
+.post-change {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include md-screen {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

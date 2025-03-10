@@ -1,0 +1,60 @@
+.zl-hero-5 {
+    background: linear-gradient(123deg, $color-1, $color-2);
+    &__element {
+        display: none;
+        position: absolute;
+        @include lg-screen {
+            display: block;
+        }
+        &-1 {
+            top: 175px;
+            left: 150px;
+            animation: circle 40s linear infinite;
+        }
+        &-2 {
+            top: 200px;
+            left: 50px;
+            animation: goright 40s linear infinite;
+        }
+        &-3 {
+            bottom: 50px;
+            left: 50px;
+            animation: circle 20s linear infinite;
+        }
+        &-4 {
+            bottom: 200px;
+            left: 150px;
+            animation: circlerotate 20s linear infinite;
+        }
+        &-5 {
+            bottom: 100px;
+            left: 300px;
+            animation: circlerotate 40s linear infinite;
+        }
+        &-6 {
+            top: 185px;
+            right: 330px;
+            animation: circlerotate 40s linear infinite;
+            
+        }
+        &-7 {
+            top: 200px;
+            right: 150px;
+        }
+        &-8 {
+            top: 300px;
+            right: 70px;
+            animation: circlerotate 40s linear infinite;
+        }
+        &-9 {
+            bottom: 100px;
+            right: 70px;
+            animation: circlerotate 40s linear infinite;
+        }
+        &-10 {
+            top: 300px;
+            right: 50%;
+            animation: goleft 40s linear infinite;
+        }
+    }
+}

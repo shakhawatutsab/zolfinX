@@ -1,0 +1,12 @@
+.zl-header {
+    padding-top: 15px;
+    position: relative;
+    @include lg-screen {
+        padding-top: 0;
+    }
+    &--border {
+        @include xl-screen {
+            border-bottom: 1px solid rgba($border, .3);
+        }
+    }
+}

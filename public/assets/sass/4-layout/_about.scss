@@ -1,0 +1,12 @@
+.l-about {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &--bg-1 {
+        background-image: url(../img/about-bg.png);
+        background-color: $white;
+    }
+    &--bg-2 {
+        background-image: url(../img/about-bg-2.png);
+    }
+}

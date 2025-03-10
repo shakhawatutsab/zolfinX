@@ -1,0 +1,17 @@
+.recent-post {
+    &__img {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    &__content {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    &__list {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

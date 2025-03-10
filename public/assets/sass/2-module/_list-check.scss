@@ -1,0 +1,27 @@
+.list-check {
+    &__item {
+        position: relative;
+        padding-left: 50px;
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:hover {
+            &::before {
+                color: $primary;
+            }
+        }
+        &::before {
+            content: "\f058";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 1;
+            color: $heading-text;
+            transition: all .3s ease;
+        }
+    }
+}

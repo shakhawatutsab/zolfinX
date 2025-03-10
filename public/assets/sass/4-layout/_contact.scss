@@ -1,0 +1,10 @@
+.l-contact {
+    background-position: left top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    &--bg {
+        @include lg-screen {
+            background-image: url(../img/contact-bg.png);
+        }
+    }
+}

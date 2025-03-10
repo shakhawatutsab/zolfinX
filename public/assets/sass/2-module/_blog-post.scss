@@ -1,0 +1,80 @@
+.blog-post {
+    padding: 10px;
+    &__img {
+        position: relative;
+    }
+    &__date {
+        width: 70px;
+        height: 70px;
+        display: block;
+        background: $heading-text;
+        position: absolute;
+        right: 10px;
+        bottom: -10px;
+        &::after {
+            content: "";
+            border-top: 5px solid $text;
+            border-left: 5px solid $text;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid transparent;
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+        }
+        &-day {
+            font-size: 18px;
+            font-weight: 700;
+            color: $white;
+        }
+        &-month {
+            font-size: 12px;
+            color: $white;
+        }
+    }
+    &__title {
+        margin-top: 50px;
+    }
+    &__author {
+        border: 1px solid $border;
+        padding: 5px 10px;
+        border-radius: 50px;
+        &-img {
+            width: 25px;
+            height: 25px;
+            min-width: 25px;
+            min-height: 25px;
+            display: inline-block;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+        &-name {
+            display: inline-block;
+            font-size: 14px;
+            color: $heading-text;
+            width: max-content;
+        }
+    }
+    &__slider {
+        &-item {
+            position: relative;
+        }
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            transition: all 0.3s ease;
+            z-index: 99;
+            &:hover {
+                background: $alpha;
+                color: white;
+            }
+        }
+        .slick-prev {
+            left: 0;
+        }
+        .slick-next {
+            right: 0;
+        }
+    }
+}

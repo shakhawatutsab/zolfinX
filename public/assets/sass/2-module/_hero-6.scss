@@ -1,0 +1,52 @@
+.zl-hero-6 {
+    position: relative;
+    background: linear-gradient($color-10, transparent);
+    &__bg {
+        background-image: url(../img/home-6-bg.png);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    //Header 6 Navigation
+    .zl-nav {
+        &__link {
+            @include lg-screen {
+                color: $heading-text;
+                &:hover {
+                    color: $color-11;
+                }
+            }
+            @include xl-screen {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+        }
+        &__item-has-sub {
+            &::after {
+                @include lg-screen {
+                    color: $heading-text;
+                }
+            }
+            &:hover {
+                &::after {
+                    @include lg-screen {
+                        color: $color-11;
+                    }
+                }
+                > .zl-nav__link {
+                    color: $color-11;
+                }
+            }
+        }
+        &__sub-item {
+            &:hover {
+                background: $color-11;
+            }
+        }
+        &__sub-3rd {
+            .zl-nav__sub-item:hover {
+                background: darken($color-11, 4%);
+            }
+        }
+    }
+}

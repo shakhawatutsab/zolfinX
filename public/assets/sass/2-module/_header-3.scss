@@ -1,0 +1,28 @@
+.header-3 {
+    @include lg-screen {
+        .zol-menu__current > .zol-menu__link {
+            color: $alpha;
+        }
+        .zol-menu__current {
+            border-bottom: 1px solid $alpha;
+        }
+        .zol-menu__link {
+            color: $white;
+        }
+        .zol-menu__list:hover {
+            border-bottom: 1px solid $alpha;
+        }
+        .zol-menu__has-sub:hover .zol-menu__link {
+            color: $alpha;
+        }
+        .zol-menu__sub-link:hover {
+            background: $alpha;
+        }
+        .zol-menu__has-sub-2:hover .zol-menu__sub-link {
+            background: $alpha;
+        }
+        .zol-menu__sub-2-link-2:hover {
+            background: $alpha;
+        }
+    }
+}

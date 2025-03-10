@@ -1,0 +1,46 @@
+.zl-hero-7 {
+    position: relative;
+    .zl-blur--1 {
+        top: 100px;
+        left: 180px;
+        animation: circle 20s linear infinite;
+    }
+    .zl-blur--2 {
+        bottom: 300px;
+        left: 100px;
+        animation: circle 20s linear infinite;
+    }
+    .zl-blur--3 {
+        bottom: 380px;
+        right: 100px;
+        animation: circle 20s linear infinite;
+    }
+    .zl-blur--4 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: circle 20s linear infinite;
+    }
+    .zl-obj {
+        display: none;
+        position: absolute;
+        top: 200px;
+        left: 80px;
+        animation: circle 20s linear infinite;
+        @include xli-screen {
+            display: inline-block;
+        }
+    }
+    &__title {
+        font-family: $bree;
+        @include xlii-screen {
+            font-size: 60px;
+        }
+    }
+    &__sub-title {
+        color: $heading-text;
+        @include xlii-screen {
+            width: 70%;
+        }
+    }
+}

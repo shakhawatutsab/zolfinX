@@ -1,0 +1,33 @@
+.service-section {
+    &__content {
+        position: relative;
+        top: -120px;
+    }
+    &__end {
+        background-position: left bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/service-bg.png);
+    }
+}
+
+.zl-service-section {
+    position: relative;
+    overflow-x: hidden;
+    &--1 {
+        background-image: url(../img/service-bg-2.png);
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
+.zl-services {
+    position: relative;
+    overflow-x: hidden;
+    &--1 {
+        background-image: url(../img/service-bg-2.png);
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}

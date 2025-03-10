@@ -1,0 +1,29 @@
+.zl-featured-slider-nav {
+    &__item {
+        &:focus {
+            outline: none;
+        }
+    }
+    .slick-arrow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid $color-8;
+        background: transparent;
+        color: $color-8;
+        transition: all .3s ease;
+        position: absolute;
+        right: 0;
+        z-index: 90;
+        &:hover {
+            border: 2px solid $color-3;
+            color: $color-3;
+        }
+    }
+    .slick-next {
+        bottom: 0;
+    }
+    .slick-prev {
+        bottom: 55px;
+    }
+}

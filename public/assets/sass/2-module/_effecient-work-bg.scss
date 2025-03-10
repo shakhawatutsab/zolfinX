@@ -1,0 +1,16 @@
+.effecient-work-bg {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include xl-screen {
+        width: 45%;
+    }
+    @include xlii-screen {
+        width: 45%;
+    }
+    @include xlv-screen {
+        width: 50%;
+        right: -200px;
+    }
+}

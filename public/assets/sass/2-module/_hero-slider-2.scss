@@ -1,0 +1,38 @@
+.hero-slider-2 {
+    height: 730px;
+    &__item {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+    .owl-stage-outer {
+        height: 100%;
+    }
+    .owl-stage {
+        height: 100%;
+    }
+    .owl-item {
+        height: 100%;
+    }
+    .owl-item.active {
+        .slide-down {
+            animation: slideInDown 1.5s 0.05s linear;
+        }
+        .slide-right {
+            animation: slideInRight 1.5s 0.05s linear;
+        }
+        .slide-left {
+            animation: slideInLeft 1.5s 0.05s linear;
+        }
+        .slide-up {
+            animation: slideInUp 1.5s 0.05s linear;
+        }
+    }
+}

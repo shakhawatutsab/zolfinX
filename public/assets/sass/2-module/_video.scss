@@ -1,0 +1,44 @@
+.video {
+    &-wrapper {
+        position: relative;
+        box-shadow: 0 10px 15px rgba($primary, 0.2);
+        z-index: 1;
+        @include xliv-screen {
+            &::after {
+                content: url(../img/video-shape-1.png);
+                position: absolute;
+                top: -25px;
+                right: -50px;
+                z-index: -1;
+            }
+            &::before {
+                content: url(../img/video-shape-2.png);
+                position: absolute;
+                bottom: -60px;
+                left: -50px;
+                z-index: -1;
+            }
+        }
+    }
+    &-play {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(-39deg, $alpha, $primary);
+        color: $white;
+        font-size: 24px;
+        line-height: 1;
+        animation: about-play 2s infinite;
+        transition: all 0.2s ease;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
