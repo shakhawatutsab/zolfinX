@@ -12,7 +12,15 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index');
+        $title = "All Categories";
+
+        $keyword = request('search');
+
+        $categories = Category::where('title','LIKE', '%'.$keyword.'%')
+            ->orWhere('slug','LIKE', '%'.$keyword.'%')
+            ->orderBy('id','asc')->paginate(5);
+
+        return view('admin.categories.index', compact('keyword','categories'));
     }
 
     /**

@@ -19,12 +19,14 @@ class LoginController extends Controller
         $information = $request->validate([
             "name" =>"required|max:200",
             "username" =>"required",
-            "photo" =>"required",
+            "photo" =>"required|image|mimes:png,jpg",
             "email" =>"required|email|unique:users",
             "password"=> "required|min:8",
         ]);
 
         if($user = User::create($information)){
+
+            $request->file('photo')->storeAs('/public/images' );
 
             Auth::attempt($information);
             return redirect('/dashboard')->with('message','Registration successful');

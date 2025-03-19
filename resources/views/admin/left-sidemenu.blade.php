@@ -23,19 +23,19 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-categories" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Posts</span>
+                <span class="menu-title">Categories</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-categories">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route ('posts.index') }}">All posts</a>
+                    <a class="nav-link" href="{{route ('posts.index') }}">All Categories</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('posts.create') }}">Create new posts</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('posts.index') }}">Categories</a>
+                    <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
                   </li>
                 </ul>
               </div>

@@ -27,7 +27,7 @@ Route::get('/portfolio-details', [PortfolioController::class,'portfolio_details'
 Route::group(['prefix' => 'admin' , 'middleware' => 'auth'],function(){
     Route::resources([
         'posts'     => PostController::class,
-        'Categories'=> CategoryController::class
+        'categories'=> CategoryController::class
     ]);
 });
 

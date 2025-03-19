@@ -34,7 +34,7 @@
             <div class="col-lg-10 col-xl-8">
                 <div class="row">
                     <div class="col">
-                        <form class="text-center" method="post" action="{{route('registration')}}">
+                        <form class="text-center" method="post" action="{{route('registration')}}" enctype="multipart/form-data">
 
                             @csrf
 
@@ -69,7 +69,7 @@
                             @enderror
 
                             <div class="mb-3">
-                                <input value="{{old('photo')}}" type="text" name="photo" class="form-controll" placeholder="photo url">
+                                <input value="{{old('photo')}}" type="file" name="photo" class="form-controll" placeholder="photo url">
                             </div>
 
                             @error('photo')

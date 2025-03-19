@@ -15,7 +15,7 @@
 
             <h4 class="card-title">Create new Post</h4>
             <hr>
-            <form class="forms-sample" method="POST" action="{{route('posts.store')}}">
+            <form class="forms-sample" method="POST" action="{{ route('posts.store')}}"enctype="multipart/form-data>
 
                 @csrf
                 <div class="form-group">
@@ -27,13 +27,8 @@
                 </div>
                 <div class="form-group">
                     <label>Post Thumbnail</label>
-                    <input type="file" name="img[]" class="file-upload-default">
-                    <div class="input-group col-xs-12">
-                        <input type="text" name="thumbnail" class="form-control file-upload-info" placeholder="Post Thumbnail" value="{{old('thumbnail')}}">
-                        <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-info" type="button">Upload</button>
-                        </span>
-                    </div>
+                </br>
+                    <input type="file" name="thumnail">
                     @error('thumbnail')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror

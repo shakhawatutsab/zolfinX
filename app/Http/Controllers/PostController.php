@@ -27,7 +27,7 @@ class PostController extends Controller
         $posts = Post::where('title','LIKE', '%'.$keyword.'%')
             ->orWhere('excerpt','LIKE', '%'.$keyword.'%')
             ->orWhere('content','LIKE', '%'.$keyword.'%')
-            ->orderBy('id','asc')->paginate(5);
+            ->orderBy('id','asc')->paginate(10);
 
         return view('admin.posts.posts',[
             'posts' => $posts,
@@ -42,7 +42,7 @@ class PostController extends Controller
     {
         $request -> validate([
             'title' =>'required',
-            'thumbnail' => 'required',
+            'thumbnail' => 'required|image|mimes:png,jpg',
             'excerpt' => 'required',
             'content' => 'required',
         ]);
@@ -50,6 +50,12 @@ class PostController extends Controller
         $request['slug'] = implode( explode('-',$request->title));
         $request['user_id'] = auth()->user()->id;
         $request['views'] =0;
+
+        $image_name = $request->file('thumbnail')->hashName();
+
+        $request->file('thumbnail')->storeAs('public/images',$image_name);
+
+        $request ['thumbnail'] = $image_name;
 
         Post::create( $request->all() );
 
@@ -60,6 +66,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show(string $id)
     {
         //
@@ -77,6 +84,7 @@ class PostController extends Controller
             'post' =>$post,
             'categories' => $categories,
             'cat' => $post-> category,
+
 
         ]);
     }
@@ -97,8 +105,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $post->delete();
 
+        $post->delete();
         return back()->with('message','Post remove successfully!');
+
     }
 }
