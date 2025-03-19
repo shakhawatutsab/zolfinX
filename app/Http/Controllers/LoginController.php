@@ -24,11 +24,22 @@ class LoginController extends Controller
             "password"=> "required|min:8",
         ]);
 
-        if($user = User::create($information)){
+        $user = new User;
 
-            $request->file('photo')->storeAs('/public/images' );
+        $user->name =$request->name;
+        $user ->username = $request->username;
 
-            Auth::attempt($information);
+        $photo_name =time() . '-' . $request->file('photo')->getClientOriginalName();
+        $request->file('photo')->storeAs('/public/image', $photo_name);
+
+        $user->photo = $photo_name;
+        $user->email = $request->email;
+        $user->password = bcrypt( $request->password );
+
+
+        if($user->save() ){
+
+            Auth::login($user);
             return redirect('/dashboard')->with('message','Registration successful');
 
         };
