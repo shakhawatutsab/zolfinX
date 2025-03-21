@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{isset($title) ? $title:env('APP_NAME')}}</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{asset("/admin/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css")}}">
-    <link rel="stylesheet" href="{{asset("/admin/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css")}}">
-    <link rel="stylesheet" href="{{asset("/admin/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css")}}">
-    <link rel="stylesheet" href="{{asset("/admin/assets/vendors/css/vendor.bundle.base.css")}}">
-    <link rel="stylesheet" href="{{asset("/admin/assets/vendors/css/vendor.bundle.addons.css")}}">
+    <link rel="stylesheet" href="{{Asset("/admin/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css")}}">
+    <link rel="stylesheet" href="{{Asset("/admin/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css")}}">
+    <link rel="stylesheet" href="{{Asset("/admin/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css")}}">
+    <link rel="stylesheet" href="{{Asset("/admin/assets/vendors/css/vendor.bundle.base.css")}}">
+    <link rel="stylesheet" href="{{Asset("/admin/assets/vendors/css/vendor.bundle.addons.css")}}">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{asset("/admin/assets/css/shared/style.css")}}">
+    <link rel="stylesheet" href="{{Asset("/admin/assets/css/shared/style.css")}}">
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="{{asset("/admin/assets/css/demo_1/style.css")}}">
+    <link rel="stylesheet" href="{{Asset("/admin/assets/css/demo_1/style.css")}}">
     <!-- End Layout styles -->
-    <link rel="shortcut icon" href="{{asset("/admin/assets/images/favicon.ico")}}" />
+    <link rel="shortcut icon" href="{{Asset("/admin/assets/images/favicon.ico")}}" />
   </head>
   <body>
     <div class="container-scroller">
@@ -28,9 +28,9 @@
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
           <a class="navbar-brand brand-logo" target="_blank" href="{{route('home')}}">
-            <img src="{{asset('/admin/assets/images/logo.svg')}}" alt="logo" /> </a>
+            <img src="{{Asset('/admin/assets/images/logo.svg')}}" alt="logo" /> </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="{{asset('/admin/assets/images/logo-mini.svg')}}" alt="logo" /> </a>
+            <img src="{{Asset('/admin/assets/images/logo-mini.svg')}}" alt="logo" /> </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
           <ul class="navbar-nav">
@@ -96,7 +96,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="{{asset('/admin/assets/images/faces/face12.jpg')}}" alt="image" class="img-sm profile-pic">
+                    <img src="{{Asset('/admin/assets/images/faces/face12.jpg')}}" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -105,7 +105,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="ass{{asset('/admin/ets/images/faces/face1.jpg')}}" alt="image" class="img-sm profile-pic">
+                    <img src="ass{{Asset('/admin/ets/images/faces/face1.jpg')}}" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -155,10 +155,10 @@
             </li>
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="{{asset('/admin/assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle" src="{{Asset('/admin/assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="{{asset('/admin/assets/images/faces/face8.jpg')}}" alt="Profile image">
+                  <img class="img-md rounded-circle" src="{{Asset('/admin/assets/images/faces/face8.jpg')}}" alt="Profile image">
                   <p class="mb-1 mt-3 font-weight-semibold">{{auth()->user()->name}}</p>
                   <p class="font-weight-light text-muted mb-0">{{auth()->user()->email}}</p>
                 </div>
@@ -166,7 +166,12 @@
                 <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
                 <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
                 <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+                <form action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="btn mt-3">
+                        Logout
+                    </button>
+                </form>
               </div>
             </li>
           </ul>
@@ -200,18 +205,18 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="{{asset("/admin/assets/vendors/js/vendor.bundle.base.js")}}"></script>
-  <script src="{{asset("/admin/assets/vendors/js/vendor.bundle.addons.js")}}"></script>
+  <script src="{{Asset("/admin/assets/vendors/js/vendor.bundle.base.js")}}"></script>
+  <script src="{{Asset("/admin/assets/vendors/js/vendor.bundle.addons.js")}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="{{asset("/admin/assets/js/shared/off-canvas.js")}}"></script>
-  <script src="{{asset("/admin/assets/js/shared/misc.js")}}"></script>
+  <script src="{{Asset("/admin/assets/js/shared/off-canvas.js")}}"></script>
+  <script src="{{Asset("/admin/assets/js/shared/misc.js")}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="{{asset("/admin/assets/js/demo_1/dashboard.js")}}"></script>
+  <script src="{{Asset("/admin/assets/js/demo_1/dashboard.js")}}"></script>
   <!-- End custom js for this page-->
-  <script src="{{asset("/admin/assets/js/shared/jquery.cookie.js")}}" type="text/javascript"></script>
+  <script src="{{Asset("/admin/assets/js/shared/jquery.cookie.js")}}" type="text/javascript"></script>
 </body>
 </html>
