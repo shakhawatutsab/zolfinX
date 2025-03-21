@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -18,7 +19,7 @@ class CategoryController extends Controller
 
         $categories = Category::where('title','LIKE', '%'.$keyword.'%')
             ->orWhere('slug','LIKE', '%'.$keyword.'%')
-            ->orderBy('id','asc')->paginate(5);
+            ->orderBy('id','asc')->paginate(15);
 
         return view('admin.categories.index', compact('keyword','categories'));
     }
@@ -36,7 +37,26 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category;
+
+        $category_name = $request->category_name;
+
+        $category->slug = implode('-',explode('-', $request->$category_name) );
+
+        $category->title = $request->category_name;
+        $category->thumbnail = $request->category_name;
+        $category->content = $request->category_name;
+        $category->excerpt = $request->category_name;
+        $category->user_id = Auth::id();
+        $category->views = 0;
+
+
+        if( $category->save() ){
+            return redirect()->back()->with('message', 'Category has been saved!');
+        }
+        return redirect()->back()->with('error', 'Failed to save category.');
+
+
     }
 
     /**

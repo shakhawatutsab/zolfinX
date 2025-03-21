@@ -11,11 +11,11 @@ class Category extends Model
 
     protected $fillable = [
         'title',
+        'user_id' => 1,
         'slug',
         'thumbnail',
         'content',
         'excerpt',
-        'user_id',
-        'views'
+        'views' => 0
     ];
 }

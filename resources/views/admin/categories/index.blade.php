@@ -12,15 +12,19 @@
         <div class="col-lg-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-
+                @if(session()->get('message'))
+                <div class="alert alert-success">{{session('message')}}</div>
+            @endif
             <div class="row">
                 <div class="col">
                     <h2 class="card-title">Add new category</h2>
                 </div>
             </div>
             <div class="category-form">
-                <form action="">
-                    <input class="form-control mb-2" type="text" placeholder="category name">
+
+                <form action="{{ route('categories.store') }}" method="POST">
+                    @csrf
+                    <input class="form-control mb-2" name="category_name" type="text" placeholder="category name">
                     <button type = "submit" class="btn btn-primary" >
                         create category
                     </button>
@@ -34,9 +38,7 @@
         <div class="col-lg-6 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                  @if(session()->get('message'))
-                      <div class="alert alert-success">{{session('message')}}</div>
-                  @endif
+
               <div class="row">
                   <div class="col">
                       <h2 class="card-title">All Categories</h2>
@@ -55,7 +57,6 @@
                     <tr>
                       <th> Post ID </th>
                       <th> Category Name </th>
-                      <th> Category Slug </th>
                       <th> Updated at </th>
                       <th> <> </th>
                     </tr>
