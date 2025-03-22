@@ -106,6 +106,10 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::firstWhere('id', $id);
+
+        $category->delete();
+
+        return redirect()->route('categories.index')->with('message','Category remove successfully!');
     }
 }

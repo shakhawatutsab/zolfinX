@@ -77,11 +77,14 @@
                       <td> {{ $category->slug }} </td>
                       <td> {{date('F d,Y',strtotime($category->updated_at))}} </td>
                       <td>
-                          <a class="btn btn-info" href="{{route('categories.edit',$category->id)}}">Edit</a>
-                          <form method="POST"action="{{route('categories.destroy',$category->id)}} ">
-                              @csrf
-                              @method('DELETE')
-                              <button class="btn btn-danger" type="submit">Delete</button>
+                          <a class="btn btn-info" href="{{route('categories.edit', $category->id)}}">Edit</a>
+                          <form method="post" action="{{ route('categories.destroy', $category->id) }}">
+
+                            @csrf
+                            @method("DELETE")
+
+
+                            <button class="btn btn-danger">Delete</button>
                           </form>
                       </td>
                     </tr>
