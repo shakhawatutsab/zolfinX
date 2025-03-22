@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
         $categories = Category::where('title','LIKE', '%'.$keyword.'%')
             ->orWhere('slug','LIKE', '%'.$keyword.'%')
-            ->orderBy('id','asc')->paginate(15);
+            ->orderBy('id','desc')->paginate(5);
 
         return view('admin.categories.index', compact('keyword','categories'));
     }
@@ -72,7 +72,17 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
+        $title = "Edit Categories";
 
+        $keyword = request('search');
+
+        $current_category = Category::firstWhere('id',$id);
+
+        $categories = Category::where('title','LIKE', '%'.$keyword.'%')
+            ->orWhere('slug','LIKE', '%'.$keyword.'%')
+            ->orderBy('id','desc')->paginate(5);
+
+        return view('admin.categories.edit', compact('keyword','title','categories','current_category'));
     }
 
     /**
@@ -80,7 +90,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::firstWhere('id', $id);
+
+        $category->title = $request->category_name;
+
+        $category->slug = strtolower( implode( '-', explode(' ', $request->category_slug ) ) );
+
+        $category->save();
+
+        return back()->with('message','Category Update Successfully Done');
     }
 
     /**
