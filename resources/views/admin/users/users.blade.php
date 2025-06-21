@@ -31,7 +31,7 @@
               <table class="table table-striped mb-5">
                 <thead>
                   <tr>
-                    <th> User ID </th>
+                    <th> User id </th>
                     <th> Thumbnail </th>
                     <th> Name </th>
                     <th> User Name </th>
