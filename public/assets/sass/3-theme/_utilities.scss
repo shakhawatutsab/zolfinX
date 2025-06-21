@@ -1,0 +1,185 @@
+.t-link {
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+    &:focus {
+        outline: none;
+    }
+    &--primary {
+        color: $heading-text;
+        &:hover {
+            color: $primary;
+        }
+    }
+    &-primary {
+        color: $primary;
+        &:hover {
+            color: $primary;
+        }
+    }
+    &--alpha {
+        color: $heading-text;
+        &:hover {
+            color: $alpha;
+        }
+    }
+    &--light-alpha {
+        color: $white;
+        &:hover {
+            color: $alpha;
+        }
+    }
+    &-alpha {
+        color: $alpha;
+        &:hover {
+            color: $alpha;
+        }
+    }
+    &--color-11 {
+        color: $heading-text;
+        &:hover {
+            color: $color-11;
+        }
+    }
+    &-beta {
+        color: $beta;
+        &:hover {
+            color: $beta;
+        }
+    }
+    &-gamma {
+        color: $gamma;
+        &:hover {
+            color: $gamma;
+        }
+    }
+    &-delta {
+        color: $delta;
+        &:hover {
+            color: $delta;
+        }
+    }
+    &-alpha {
+        color: $alpha;
+        &:hover {
+            color: $alpha;
+        }
+    }
+    &-alpha {
+        color: $alpha;
+        &:hover {
+            color: $alpha;
+        }
+    }
+    &--fb {
+        color: $fb;
+        &:hover {
+            color: $fb;
+        }
+    }
+    &--tw {
+        color: $tw;
+        &:hover {
+            color: $tw;
+        }
+    }
+    &--ins {
+        color: $ins;
+        &:hover {
+            color: $ins;
+        }
+    }
+    &--in {
+        color: $in;
+        &:hover {
+            color: $in;
+        }
+    }
+    &--be {
+        color: $be;
+        &:hover {
+            color: $be;
+        }
+    }
+}
+.t-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    &--row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &--column {
+        display: flex;
+        flex-direction: column;
+    }
+    &__icon {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &::before {
+            content: "\f00c";
+            font-family: 'Line Awesome Free';
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 1;
+            margin-right: 8px;
+            color: $delta;
+        }
+    }
+    &__item {
+        margin-right: 15px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__mr30 {
+        margin-right: 30px;
+    }
+}
+.t-img-gray {
+    transition: all 0.3s ease;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    &:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
+.t-border-bottom-eta {
+    border-bottom: 1px solid $eta;
+}
+.zl-border-light {
+    border-top: 1px solid rgba($white, .5);
+}
+.t-voerflow-x {
+    overflow-x: hidden;
+}
+.t-border-6 {
+    border: 1px solid $color-6;
+}
+.t-line-1 {
+    line-height: 1;
+}
+.t-border-11 {
+    border: 1px solid $color-11;
+}
+.t-border-alpha {
+    border: 1px solid $alpha;
+}
+.t-font-4 {
+ font-family: $bree;
+}
+.t-border-light {
+    border: 1px solid $white;
+}
+.t-placeholder-light {
+    &::placeholder {
+        color: $white;
+    }
+}

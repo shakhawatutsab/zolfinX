@@ -1,0 +1,23 @@
+.zol-banner {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &--404 {
+        background-image: url(../img/banner-bg.png);
+    }
+    &--about {
+        background-image: url(../img/banner-bg.png);
+    }
+    &--blog {
+        background-image: url(../img/banner-bg.png);
+    }
+    &--contact {
+        background-image: url(../img/banner-bg.png);
+    }
+    &--price {
+        background-image: url(../img/banner-bg.png);
+    }
+    &--portfolio {
+        background-image: url(../img/banner-bg.png);
+    }
+}

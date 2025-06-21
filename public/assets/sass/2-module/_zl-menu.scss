@@ -1,0 +1,135 @@
+.zl-menu {
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include xs-screen {
+        height: 550px;
+    }
+    @include md-screen {
+        height: 660px;
+    }
+    @include lg-screen {
+        height: auto;
+        flex-direction: row;
+        flex-basis: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-container {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        background: linear-gradient(123deg, $color-2, $color-4);
+        z-index: -1;
+        visibility: hidden;
+        opacity: 0;
+        clip-path: circle(0% at 100% 0);
+        transition: all 0.4s ease;
+        @include lg-screen {
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            z-index: 1;
+            visibility: visible;
+            opacity: 1;
+            clip-path: none;
+            background: transparent;
+            flex-direction: row;
+            align-items: center;
+        }
+        &.active {
+            z-index: 1;
+            visibility: visible;
+            opacity: 1;
+            clip-path: circle(150% at 100% 0);
+        }
+    }
+    &__is {
+        overflow-y: scroll;
+        @include lg-screen {
+            overflow-y: initial;
+        }
+    }
+
+    &__lang {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        @include lg-screen {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        @include xlii-screen {
+            position: relative;
+            &::after {
+                content: '';
+                width: 1px;
+                height: 100%;
+                background: rgba($white, .5);
+                position: absolute;
+                right: -15px;
+            }
+        }
+        &-link {
+            color: $white;
+            text-transform: capitalize;
+            letter-spacing: 0.02em;
+            &:hover {
+                color: $color-3;
+            }
+        }
+    }
+    &__btn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        @include lg-screen {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        &--bg-11 {
+            @include lg-screen {
+                display: flex;
+                background: $color-11;
+                align-items: center;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+    &__scl {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        @include lg-screen {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    &-close {
+        font-size: 34px;
+        line-height: 1;
+        color: $white;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        @include xs-screen {
+            top: 25px;
+            right: 15px;
+        }
+        @include md-screen {
+            top: 35px;
+            right: 35px;
+        }
+    }
+}

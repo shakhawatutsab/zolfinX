@@ -1,0 +1,196 @@
+.feedback {
+    &-wrapper {
+        position: relative;
+        box-shadow: 0 5px 15px rgba($primary, 0.1);
+        z-index: 1;
+        background: url(../img/feedback-bg.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        &-after {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 30px;
+                right: 30px;
+                top: 0;
+                bottom: -30px;
+                box-shadow: 0 5px 15px rgba($primary, 0.1);
+            }
+        }
+    }
+    &-author {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position: absolute;
+        &--1 {
+            top: 30px;
+            left: 30px;
+        }
+        &--2 {
+            top: 30px;
+            right: 30px;
+        }
+        &--3 {
+            bottom: 30px;
+            right: 50px;
+        }
+        &--4 {
+            bottom: 40px;
+            left: 60px;
+        }
+    }
+    &-slider {
+        &__img {
+            width: 120px;
+        }
+        &__item {
+            &:focus {
+                outline: none;
+            }
+        }
+        .slick-arrow {
+            border: none;
+            background: transparent;
+            color: $zeta;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            font-size: 14px;
+            &:hover {
+                color: $alpha;
+            }
+        }
+        .slick-prev {
+            right: 100%;
+            @include xl-screen {
+                right: calc(100% + 80px);
+            }
+        }
+        .slick-next {
+            left: 100%;
+            @include xl-screen {
+                left: calc(100% + 80px);
+            }
+        }
+    }
+}
+.zl-feedback {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    
+    @include md-screen {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &::after {
+            content: "\f10e";
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            position: absolute;
+            right: 25px;
+            bottom: 0;
+            font-size: 48px;
+            color: rgba($color-11, 0.25);
+        }
+    }
+    &-for {
+        @include xl-screen {
+            width: 100%;
+            max-width: 600px;
+        }
+        &__item {
+            margin: 30px 15px;
+            box-shadow: 0 10px 25px 0 rgba($color-19, 0.1);
+            background: $white;
+            @include md-screen {
+                margin: 30px 20px;
+            }
+            @include xl-screen {
+                max-width: 500px;
+                margin: 50px 30px;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    &-nav {
+        @include xl-screen {
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+        }
+        &__item {
+            margin: 30px 15px;
+            box-shadow: 0 10px 25px 0 rgba($color-19, 0.1);
+            background: $white;
+            @include md-screen {
+                margin: 30px 20px;
+            }
+            @include xl-screen {
+                margin: 50px 30px;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        //Slider Arrow
+        .slick-arrow {
+            border: 1px solid $color-11;
+            border-radius: 5px 5px 0 5px;
+            color: $color-11;
+            background: $white;
+            transition: all .3s ease;
+            position: absolute;
+            font-size: 25px;
+            @include lg-screen {
+                top: -160px;
+            }
+            @include xl-screen {
+                top: -230px;
+            }
+            &:hover {
+                background: $color-11;
+                color: $white;
+            }
+            
+            
+        }
+        .slick-prev {
+            right: -60px;
+            @include xl-screen {
+                right: -60px;
+            }
+        }
+        .slick-next {
+            right: -110px;
+            @include xl-screen {
+                right: -120px;
+            }
+        }
+    }
+    &__img {
+        width: 80px;
+        height: 80px;
+        border: 2px solid $color-11;
+        border-radius: 20px 20px 0 20px;
+        overflow: hidden;
+    }
+    &__slider-bg {
+        @include xl-screen {
+            background: url(../img/feedback-slider-bg.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}

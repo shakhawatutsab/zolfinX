@@ -1,0 +1,77 @@
+.hero-slider {
+    width: 100%;
+    
+    &__item {
+        min-height: 650px;
+        display: flex !important;
+        align-items: center;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 1;
+        @include xli-screen {
+            height: calc(100vh - 73px);
+        }
+        &:focus {
+            outline: none;
+        }
+        &--1 {
+            background: rgba($light-2, 1) url(../img/hero-1-bg.png);
+        }
+        &--2 {
+            background: rgba($light-2, 1) url(../img/hero-1-bg.png);
+        }
+        &--3 {
+            background: rgba($light-2, 1) url(../img/hero-1-bg.png);
+        }
+        &--4 {
+            background: rgba($light-2, 1) url(../img/hero-1-bg.png);
+        }
+    }
+    &__img {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        @include lg-screen {
+            display: block;
+            max-width: 475px;
+        }
+        @include xl-screen {
+            max-width: 600px;
+        }
+        @include xli-screen {
+            max-width: 700px;
+        }
+        @include xliv-screen {
+            max-width: 850px;
+        }
+        @include xxl-screen {
+            max-width: 1000px;
+        }
+        &-is {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    .owl-item.active {
+        .slide-down {
+            animation: slideInDown 1.5s 0.05s linear;
+        }
+        .slide-right {
+            animation: slideInRight 1.5s 0.05s linear;
+        }
+        .slide-up {
+            animation: slideInUp 1.5s 0.05s linear;
+        }
+    }
+}

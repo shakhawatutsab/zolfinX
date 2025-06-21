@@ -1,0 +1,62 @@
+.social-icon {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 1;
+    color: $heading-text;
+    &-light {
+        @extend .social-icon;
+        border-radius: 5px;
+        color: $white;
+        border: 2px solid transparent;
+        &--hover {
+            &:hover {
+                border: 2px solid $alpha;
+                color: $white;
+                background: $lota;
+            }
+        }
+    }
+    &--alpha {
+        background: $white;
+        &:hover {
+            background: $alpha;
+            color: $white;
+        }
+    }
+}
+
+.zl-social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 1;
+    color: $white;
+    text-decoration: none;
+    transition: all .3s ease;
+    &:hover  {
+        box-shadow: 0 5px 10px rgba($black, .3);
+        text-decoration: none;
+        color: $white;
+    }
+    &--fb {
+        background: $fb;
+    }
+    &--tw {
+        background: $tw;
+    }
+    &--dbl {
+        background: $dbl;
+    }
+    &--ins {
+        background: $ins;
+    }
+    &--in {
+        background: $in;
+    }
+}

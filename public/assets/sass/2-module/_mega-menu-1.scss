@@ -1,0 +1,131 @@
+.zl-mega-menu-1 {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: all 0.3s ease;
+    @include lg-screen {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: auto;
+        max-height: 500px;
+        overflow-y: scroll;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 15px 35px rgba($black, .1);
+        background: $white url(../img/mega-1-bg.png);
+        background-size: 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        &::after {
+            content: '';
+            width: 1px;
+            height: 80%;
+            background: rgba($heading-text, .2);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 60%;
+        }
+    }
+    @include xl-screen {
+        max-height: initial;
+        overflow-y: initial;
+        padding: 30px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        @include lg-screen {
+            width: 55%;
+        }
+        &-item {
+            width: 50%;
+            @include md-screen {
+                width: 25%;
+            }
+        }
+    }
+    &__link {
+        margin: 15px 10px;
+        position: relative;
+        &:hover {
+            @include lg-screen {
+                .zl-mega-menu-1__text {
+                    color: $alpha;
+                }
+                .zl-mega-menu-1__img {
+                    box-shadow: 0 15px 35px rgba($black, .1);
+                }
+            }
+        }
+    }
+    &__img {
+        @include lg-screen {
+            display: inline-block;
+            border: 1px solid rgba($border, 1);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+    }
+    &__label {
+        padding: 4px 8px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px 0 0 0;
+        background: $alpha;
+        font-size: 12px;
+        line-height: 1;
+        text-transform: capitalize;
+        color: $white;
+        letter-spacing: 0.1em;
+        transition: all 0.3s ease;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &__text {
+        display: block;
+        margin-top: 10px;
+        color: $white;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        text-transform: capitalize;
+        transition: all .3s ease;
+        @include lg-screen {
+            color: $heading-text;
+            font-weight: 500;
+        }
+    }
+    &__content {
+        @include lg-screen {
+            padding: 30px;
+            width: 35%;
+        }
+    }
+    &__content-text {
+        color: $white;
+        @include lg-screen {
+            color: $heading-text;
+        }
+    }
+    &__content-title {
+        color: $white;
+        @include lg-screen {
+            color: $heading-text;
+        }
+    }
+}
+.zl-mega-menu-1-container {
+    @include xl-screen {
+        position: relative;
+    }
+}
+.zl-mega-menu-1-content {
+    @include xl-screen {
+        position: static;
+    }
+}

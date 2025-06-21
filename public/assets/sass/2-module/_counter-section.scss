@@ -1,0 +1,29 @@
+.counter-section {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &--bg {
+        background-image: url(../img/counter-bg.png);
+    }
+    &__overlay {
+        background: rgba($primary, 0.9);
+    }
+    &__icon {
+        display: block;
+        font-size: 34px;
+        line-height: 1;
+    }
+    &__title {
+        display: block;
+        font-family: $heading-font;
+        font-weight: 700;
+        font-size: 2.56rem; //40.96px
+
+        @include md-screen {
+            font-size: 3.2rem; //51.2px
+        }
+        @include xl-screen {
+            font-size: 4rem; //64px
+        }
+    }
+}

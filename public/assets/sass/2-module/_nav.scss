@@ -1,0 +1,257 @@
+.zl-nav {
+    @include lg-screen {
+        display: flex;
+        align-items: center;
+    }
+    &-7 {
+        &.zl-nav {
+            .zl-nav__item {
+                @include lg-screen {
+                    margin-right: 0;
+                }
+            }
+            .zl-nav__link {
+                @include lg-screen {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    color: $heading-text;
+                    &:hover {
+                        color: $color-3;
+                    }
+                }
+                @include xl-screen {
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
+                }
+            }
+            .zl-nav__has-mega-menu {
+                &:hover {
+                    > .zl-nav__link {
+                        color: $color-3;
+                    }
+                }
+                
+            }
+            .zl-nav__item-has-sub {
+                &:hover {
+                    
+                    &::after {
+                        @include lg-screen {
+                            right: 0;
+                            color: $color-3;
+                        }
+                    }
+                }
+                &::after {
+                    
+                    @include lg-screen {
+                        right: 0;
+                        color: $heading-text;
+                    }
+                }
+            }
+            
+            .zl-nav__sub {
+                @include lg-screen {
+                    box-shadow: 0 5px 15px rgba($primary, .1);
+                }
+            }
+            .zl-nav__sub-3rd {
+                @include lg-screen {
+                    box-shadow: 0 5px 15px rgba($primary, .1);
+                }
+            }
+        }
+    }
+    &__item {
+        margin-bottom: 15px;
+        @include lg-screen {
+            margin-bottom: 0;
+            margin-right: 25px;
+        }
+        @include xlii-screen {
+            margin-right: 40px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+            @include lg-screen {
+                margin-right: 0;
+            }
+        }
+    }
+    &__item-has-sub {
+        position: relative;
+        &::after {
+            content: "\f067";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            color: $white;
+            font-size: 14px;
+            @include lg-screen {
+                right: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        &:hover {
+            .zl-nav__sub {
+                visibility: visible;
+                opacity: 1;
+                height: auto;
+                z-index: 2001;
+            }
+            &::after {
+                content: "\f068";
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+                color: $white;
+                font-size: 14px;
+                @include lg-screen {
+                    right: -20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            > .zl-nav__link {
+                color: $color-3;
+            }
+        }
+    }
+    &__link {
+        font-size: 20px;
+        font-weight: 700;
+        color: rgba($white, 0.9);
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        @include lg-screen {
+            font-size: 14px;
+            font-weight: 500;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        &:hover {
+            color: $color-3;
+        }
+    }
+    &__sub {
+        padding-left: 25px !important;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: all 0.3s ease;
+        @include lg-screen {
+            padding-left: 0 !important;
+            min-width: 200px;
+            position: absolute;
+            background: white;
+        }
+        &-link {
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            color: rgba($white, 0.8);
+            font-weight: 500;
+            text-transform: uppercase;
+            @include lg-screen {
+                padding: 15px 30px;
+                display: block !important;
+                min-width: max-content;
+                color: $heading-text;
+            }
+            &:hover {
+                color: $color-3;
+            }
+        }
+        &-3rd {
+            padding-left: 15px !important;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            transition: all 0.3s ease;
+            @include lg-screen {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                padding-left: 0 !important;
+                background: white;
+                .zl-nav__sub-item:hover {
+                    background: darken($color-3, 4%);
+                }
+            }
+        }
+        &-item {
+            margin-bottom: 10px;
+            @include lg-screen {
+                margin-bottom: 0;
+                border-bottom: 1px solid rgba($border, 0.4);
+            }
+            &:hover {
+                @include lg-screen {
+                    background: $color-3;
+                    color: $white;
+                    > .zl-nav__sub-link {
+                        color: $white;
+                    }
+                }
+            }
+            &-has-sub {
+                position: relative;
+
+                &::before {
+                    content: "\f067";
+                    position: absolute;
+                    left: -25px;
+                    top: 0;
+                    font-family: "Line Awesome Free";
+                    font-weight: 900;
+                    color: $white;
+                    font-size: 14px;
+                    transition: all .3s ease;
+                    @include lg-screen {
+                        content: "\f105";
+                        left: calc(100% - 30px);
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $heading-text;
+                    }
+                }
+                &:hover {
+                    .zl-nav__sub-3rd {
+                        visibility: visible;
+                        opacity: 1;
+                        height: auto;
+                    }
+                    @include lg-screen {
+                        &::before {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__has-mega-menu {
+        @include lg-screen {
+            position: static;
+        }
+        &:hover {
+            .zl-mega-menu-1 {
+                visibility: visible;
+                opacity: 1;
+                height: auto;
+                z-index: 2000;
+            }
+            .zl-mega-menu-2 {
+                visibility: visible;
+                opacity: 1;
+                height: auto;
+                z-index: 2000;
+            }
+        }
+    }
+}

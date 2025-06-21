@@ -1,0 +1,29 @@
+.zl-lang {
+    display: flex;
+    align-items: center;
+    &__flag {
+        width: 25px;
+        height: 25px;
+        overflow: hidden;
+        border: 1px solid rgba($white, .5);
+        border-radius: 50%;
+    }
+    &__is {
+        border-radius: 0;
+        border: none;
+        height: auto;
+        line-height: initial;
+        padding-left: 0;
+        background: transparent;
+        color: white;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        &:after {
+            border-bottom: 2px solid $white;
+            border-right: 2px solid $white;
+        }
+        .option {
+            color: $heading-text;
+        }
+    }
+}

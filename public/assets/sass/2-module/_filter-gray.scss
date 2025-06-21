@@ -1,0 +1,6 @@
+.zl-filter-gray {
+    filter: opacity(0.4) grayscale(1);
+    &:hover {
+        filter: opacity(1);
+    }
+}

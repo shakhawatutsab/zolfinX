@@ -1,0 +1,36 @@
+.social-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    &.social-list--2 {
+        .social-list__item {
+            margin-right: 8px;
+        }
+        .social-icon-light--hover:hover {
+            background: $alpha;
+        }
+    }
+    &__item {
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+.zl-social-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all .3s ease;
+    &__item {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

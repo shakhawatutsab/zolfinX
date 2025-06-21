@@ -1,0 +1,16 @@
+.hero-3 {
+    height: 1100px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &--bg {
+        background-image: url(../img/hero-3-bg.png);
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

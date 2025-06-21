@@ -1,0 +1,51 @@
+.process-card {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    box-shadow: 0 5px 10px rgba($primary, 0.2);
+    @include md-screen {
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    @include lg-screen {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    &__icon-box {
+        box-shadow: 0 5px 10px rgba($primary, 0.2);
+        @include md-screen {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &--left {
+            @include md-screen {
+                left: -30px;
+            }
+        }
+        &--right {
+            @include md-screen {
+                right: -30px;
+            }
+        }
+    }
+    &__seperator {
+        position: relative;
+        &::after {
+            @include xl-screen {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 90%;
+                background: radial-gradient($heading-text, transparent);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

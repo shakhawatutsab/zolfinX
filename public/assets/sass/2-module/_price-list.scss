@@ -1,0 +1,34 @@
+.price-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    &__item {
+        margin-bottom: 10px;
+        color: $heading-text;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &--icon {
+        li {
+            &::before {
+                content: "\f058";
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+                font-size: 20px;
+                margin-right: 8px;
+            }
+            &:nth-child(odd) {
+                &::before {
+                    color: $delta;
+                }
+            }
+            &:nth-child(even) {
+                &::before {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}

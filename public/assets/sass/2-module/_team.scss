@@ -1,0 +1,70 @@
+.zl-team {
+    position: relative;
+    background: $color-7;
+    &:hover {
+        .zl-social-list {
+            visibility: visible;
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+    &__img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    &__card {
+        display: block;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border: 1px solid $color-6;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        @include md-screen {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        &:hover {
+            border: 1px solid transparent;
+            box-shadow: 0 5px 10px rgba($black, 0.3);
+            text-decoration: none;
+        }
+    }
+    &__body {
+        margin-top: 30px;
+    }
+    &-slider {
+        &__item {
+            margin: 20px;
+            &:focus {
+                outline: none;
+            }
+        }
+        .slick-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid $color-8;
+            background: transparent;
+            color: $color-8;
+            transition: all .3s ease;
+            position: absolute;
+            top: -40px;
+            &:hover {
+                border: 2px solid $color-3;
+                color: $color-3;
+            }
+        }
+        .slick-next {
+            right: 0;
+        }
+        .slick-prev {
+            right: 55px;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.zl-tertiary-menu {
+    &__item {
+        padding: 10px;
+        @include lg-screen {
+            padding: 5px 10px;
+        }
+    }
+    &__link {
+        color: $white;
+        font-weight: 500;
+        text-transform: capitalize;
+        @include lg-screen {
+            width: 100%;
+            color: $heading-text;
+            padding: 5px;
+            border: 1px solid $border;
+            display: flex !important;
+            align-items: center;
+            background: $white;
+            &:hover {
+                color: $alpha;
+                border: 1px solid transparent;
+                background: $white;
+                box-shadow: 0 15px 25px rgba($black, .1);
+            }
+        }
+    }
+    &__icon {
+        @include lg-screen {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    }
+    &__text {
+        @include lg-screen {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.testimonials-slider {
+    &__item {
+        @include md-screen {
+            margin: 15px;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .slick-arrow {
+        position: absolute;
+        top: -55px;
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        text-align: center;
+        border: 2px solid rgba($primary, 0.1);
+        border-radius: 100%;
+        font-size: 20px;
+        line-height: 1;
+        transition: all .3s ease;
+        color: $heading-text;
+        background: $light;
+        &:hover {
+            background: $white;
+            border: 2px solid $primary;
+            color: $primary;
+        }
+    }
+    .slick-next {
+        right: 0;
+    }
+    .slick-prev {
+        right: 85px;
+    }
+
+}
+.testimonials {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: $light-2;
+    @include md-screen {
+        display: flex;
+        // align-items: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    &__img-box {
+        width: 100px;
+        min-width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 3px solid white;
+        box-shadow: 0 5px 10px rgba($primary, 0.1);
+        position: relative;
+        @include md-screen {
+            margin-right: 20px;
+        }
+    }
+}

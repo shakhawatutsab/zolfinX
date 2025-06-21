@@ -1,0 +1,22 @@
+.breadcrumbs {
+    &__list {
+        position: relative;
+        margin-right: 40px;
+
+        &:last-child {
+            margin-right: 0;
+            &::after {
+                display: none;
+            }
+        }
+        &::after {
+            content: "\f715";
+            position: absolute;
+            right: -28px;
+            top: 0;
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.zl-info {
+    position: relative;
+    &-section {
+        position: relative;
+        overflow-x: hidden;
+    }
+    &-img {
+        position: absolute;
+        &--1 {
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%) scale(.5);
+            @include xl-screen {
+                transform: scale(1) translateX(-50%);
+            }
+        }
+        &--2 {
+            top: 30px;
+            right: 50px;
+        }
+    }
+}

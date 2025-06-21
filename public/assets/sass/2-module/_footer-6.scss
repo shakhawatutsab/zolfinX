@@ -1,0 +1,13 @@
+.zl-footer-6 {
+    position: relative;
+    background: linear-gradient($color-10, transparent);
+    &__bg {
+        background-image: url(../img/home-6-foot-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include xl-screen {
+            background-size: 100% 100%;
+        }
+    }
+}

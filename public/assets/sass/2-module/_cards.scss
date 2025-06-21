@@ -1,0 +1,134 @@
+.cards {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    @include xl-screen {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    &:hover {
+        box-shadow: 0 20px 60px rgba($primary, 0.1);
+        .cards__body-title {
+            color: $primary;
+        }
+    }
+    &--shadow {
+        box-shadow: 0 3px 7px rgba($primary, 0.2);
+    }
+    &__img {
+        width: 120px;
+    }
+}
+.zl-card {
+    @extend .cards;
+    border-radius: 10px;
+    background: $color-14;
+    &:hover {
+        background: $white;
+    }
+    &__icon {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50% / 10%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        color: $white;
+        transition: all 0.3s ease;
+        z-index: 1;
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 10px 15px rgba($black, 0.1);
+        }
+        span,
+        i {
+            line-height: 1;
+            vertical-align: middle;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 10%;
+            bottom: 10%;
+            right: -5%;
+            left: -5%;
+            background: inherit;
+            border-radius: 5% / 50%;
+            z-index: -1;
+        }
+        &--sm {
+            @extend .zl-card__icon;
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            min-height: 40px;
+            font-size: 24px;
+            span,
+            i {
+                line-height: 1;
+                vertical-align: middle;
+            }
+        }
+        &--1 {
+            background: linear-gradient(50deg, $color-12, $color-13);
+        }
+        &--2 {
+            background: linear-gradient(50deg, $lambda, $alpha);
+        }
+        &--3 {
+            background: linear-gradient(50deg, $color-15, $gamma);
+        }
+        &--4 {
+            background: linear-gradient(50deg, $color-1, $color-6);
+        }
+        &--5 {
+            background: linear-gradient(50deg, $color-1, $epsilon);
+        }
+        &--6 {
+            background: linear-gradient(50deg, $color-15, $ins);
+        }
+        &--7 {
+            background: linear-gradient(50deg, $color-5, $dbl);
+        }
+        &--tw {
+            background: $tw;
+        }
+        &--fb {
+            background: $fb;
+        }
+        &--in {
+            background: $in;
+        }
+        &--dbl {
+            background: $dbl;
+        }
+    }
+    &__sub-head {
+        font-weight: 500;
+    }
+}
+.zl-cards {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    &-shadow {
+        box-shadow: 0 10px 15px rgba($primary, 0.1);
+    }
+    &--1 {
+        background: rgba($color-15, 0.07);
+    }
+    &--2 {
+        background: rgba($color-8, 0.07);
+    }
+}

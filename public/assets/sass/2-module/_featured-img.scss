@@ -1,0 +1,19 @@
+.zl-featured-img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &--1 {
+        background-image: url(../img/featured-img-1.png);
+    }
+    &--2 {
+        background-image: url(../img/featured-img-2.jpg);
+    }
+    &--3 {
+        background-image: url(../img/featured-img-3.jpg);
+    }
+    &--4 {
+        background-image: url(../img/featured-img-4.jpg);
+    }
+}

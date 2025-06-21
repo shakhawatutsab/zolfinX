@@ -1,0 +1,21 @@
+.zl-testimonial-nav-7 {
+    @include xl-screen {
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+    }
+    &__item {
+        margin: 30px 15px;
+        box-shadow: 0 10px 25px 0 rgba($color-19, 0.1);
+        background: $white;
+        @include md-screen {
+            margin: 30px 20px;
+        }
+        @include xl-screen {
+            margin: 50px 30px;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}

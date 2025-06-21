@@ -1,0 +1,23 @@
+.zl-helpline {
+    position: relative;
+    padding: 30px 35px;
+    @include md-screen {
+        margin-top: -90px;
+    }
+    &--light {
+        background: $color-16;
+        position: relative;
+        box-shadow: 0 5px 18px rgba($color-20, 0.03);
+        &::after {
+            @include md-screen {
+                content: "";
+                border-top: 20px solid transparent;
+                border-bottom: 0px solid transparent;
+                border-left: 20px solid darken($color-16, 10%);
+                position: absolute;
+                top: 0;
+                right: -20px;
+            }
+        }
+    }
+}

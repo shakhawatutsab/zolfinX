@@ -1,0 +1,243 @@
+.zol-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 290px;
+    background: $heading-text;
+    z-index: 1000;
+    @include md-screen {
+        width: 690px;
+    }
+    @include lg-screen {
+        display: flex !important;
+        justify-content: center;
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        background: transparent;
+    }
+    &-toggle {
+        font-size: 24px;
+        z-index: 1000;
+    }
+    &-wrapper {
+        position: relative;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        @include lg-screen {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    &-close {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    &-open {
+        &.acitve {
+            display: block;
+        }
+    }
+    &__list {
+        text-align: left;
+        border-bottom: 1px solid darken($heading-text, 1%);
+        &:last-child {
+            border-bottom: none;
+        }
+        @include lg-screen {
+            margin-right: 15px;
+            border-bottom: 1px solid transparent;
+            text-align: center;
+            transition: all 0.3s ease;
+            &:hover {
+                border-bottom: 1px solid $primary;
+            }
+        }
+    }
+    &__link {
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        background: rgba($white, 0.05);
+        text-transform: capitalize;
+        color: $white;
+        font-weight: 500;
+        &:hover {
+            color: $white;
+        }
+        @include lg-screen {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            font-size: 14px;
+            color: $heading-text;
+            text-transform: uppercase;
+            background: transparent;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    &__sub {
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+        transition: all 0.1s ease;
+        z-index: -9998;
+        @include lg-screen {
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            background: $heading-text;
+        }
+        &-list {
+            border-bottom: 1px solid darken($heading-text, 1%);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        &-link {
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: relative;
+            background: rgba($white, 0.1);
+            text-transform: capitalize;
+            color: $white;
+            &:hover {
+                color: $white;
+            }
+            @include lg-screen {
+                font-size: 14px;
+                &:hover {
+                    background: $primary;
+                }
+            }
+        }
+    }
+    &__sub-2 {
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: -9998;
+        @include lg-screen {
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        &-list-2 {
+            border-bottom: 1px solid darken($heading-text, 1%);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        &-link-2 {
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: relative;
+            background: rgba($white, 0.2);
+            text-transform: capitalize;
+            color: $white;
+            &:hover {
+                color: $white;
+            }
+            @include lg-screen {
+                font-size: 14px;
+                &:hover {
+                    background: $primary;
+                }
+            }
+        }
+    }
+    &__has-sub {
+        position: relative;
+        &:hover {
+            > .zol-menu__sub {
+                height: auto;
+                transition: all 0.1s ease;
+                opacity: 1;
+                visibility: visible;
+                z-index: 9998;
+                @include lg-screen {
+                    width: 290px;
+                }
+            }
+            @include lg-screen {
+                .zol-menu__link {
+                    color: $primary;
+                }
+            }
+        }
+        .zol-menu__link {
+            &:after {
+                content: "\f107";
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                @include lg-screen {
+                    right: -3px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    &__has-sub-2 {
+        position: relative;
+        &:hover {
+            > .zol-menu__sub-2 {
+                height: auto;
+                transition: all 0.3s ease;
+                opacity: 1;
+                visibility: visible;
+                z-index: 9998;
+                @include lg-screen {
+                    width: 100%;
+                    background: $heading-text;
+                }
+            }
+            @include lg-screen {
+                .zol-menu__sub-link {
+                    background: $primary;
+                }
+            }
+        }
+        .zol-menu__sub-link {
+            &:after {
+                content: "\f107";
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                @include lg-screen {
+                    content: "\f105";
+                }
+            }
+        }
+    }
+    &__current {
+        @include lg-screen {
+            border-bottom: 1px solid $primary;
+            > .zol-menu__link {
+                color: $primary;
+            }
+        }
+    }
+}

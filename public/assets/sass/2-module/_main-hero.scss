@@ -1,0 +1,53 @@
+.zl-main-hero {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    @include xs-screen {
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
+    @include lg-screen {
+        overflow-x: hidden;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: calc(100vh - 158px);
+        min-height: 768px;
+        display: flex;
+    }
+    @include xl-screen {
+        height: calc(100vh - 87px);
+    }
+    &__title {
+        font-family: $franklin;
+    }
+    &__subtitle {
+        font-size: 14px;
+        @include xlii-screen {
+            width: 70%;
+        }
+    }
+    &__img {
+        display: none;
+        @include lg-screen {
+            display: flex;
+            width: calc(100vw - 525px);
+            height: calc(100vh - 200px);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+        @include xl-screen {
+            width: calc(100vw - 650px);
+        }
+        @include xli-screen {
+            width: calc(100vw - 790px);
+        }
+        @include xlii-screen {
+            width: calc(100vw - 750px);
+            max-width: 685px;
+            height: calc(100vh - 250px);
+        }
+        
+    }
+}

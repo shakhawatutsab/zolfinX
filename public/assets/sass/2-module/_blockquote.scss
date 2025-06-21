@@ -1,0 +1,29 @@
+.blockquote {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: $primary;
+    @include md-screen {
+        padding-left: 50px;
+        padding-right: 100px;
+        position: relative;
+        &::before {
+            content: "\f10e";
+            position: absolute;
+            right: 30px;
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            font-size: 80px;
+            line-height: 1;
+            color: darken($primary, 10%);
+        }
+    }
+    &--alt {
+        background: rgba($primary, 0.1);
+        color: $text !important;
+        &::before {
+            color: rgba($primary, 0.3);
+        }
+    }
+}

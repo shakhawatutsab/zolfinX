@@ -1,0 +1,98 @@
+.st-comments {
+    display: flex;
+    &__author {
+        width: 80px;
+        min-width: 80px;
+        height: 80px;
+        overflow: hidden;
+        margin-right: 16px;
+        @include md-screen {
+            margin-right: 30px;
+        }
+        &-img {
+            border-radius: 50%;
+        }
+    }
+    &__info {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    &__title {
+        text-transform: capitalize;
+        &-link {
+            color: $heading-text;
+            &:hover {
+                text-decoration: none;
+                color: $heading-text;
+            }
+        }
+    }
+    &__children {
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding-inline-start: 0;
+        list-style: none;
+        @include md-screen {
+            padding-inline-start: 100px;
+        }
+        .st-comments__author {
+            width: 60px;
+            min-width: 60px;
+            height: 60px;
+            margin-right: 30px;
+        }
+    }
+    &-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        & > li {
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        
+    }
+    &-title {
+        margin-bottom: 30px;
+        text-transform: capitalize;
+    }
+    &-form {
+        margin-top: 60px;
+    }
+    &__form {
+        textarea {
+            resize: none;
+            &:focus {
+                outline: none !important;
+                border-color: grey;
+                box-shadow: none;
+            }
+        }
+        input {
+            &:focus {
+                outline: none !important;
+                border-color: grey;
+                box-shadow: none;
+            }
+        }
+        .form-control {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-left: 20px;
+            font-size: 14px;
+            line-height: 1;
+            &::placeholder {
+                font-size: 14px;
+            }
+        }
+        .nice-select {
+            border: 1px solid #ced4da !important;
+        }
+        .nice-select:active, .nice-select.open, .nice-select:focus {
+            border-color: grey !important;
+        }
+    }
+}

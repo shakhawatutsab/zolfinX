@@ -1,0 +1,27 @@
+.zol-pagination {
+    &__list {
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__card {
+        padding: 10px 15px;
+        line-height: 1;
+        border: 1px solid $border;
+        border-radius: 2px;
+        color: $text;
+        transition: all .3s ease;
+        &:hover {
+            background: $alpha;
+            border: 1px solid $alpha;
+            color: white;
+            box-shadow: 0 5px 10px rgba($alpha, .5);
+        }
+        &.active {
+            background: $alpha;
+            border: 1px solid $alpha;
+            color: white;
+        }
+    }
+}

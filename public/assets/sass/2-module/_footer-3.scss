@@ -1,0 +1,17 @@
+.zl-footer-3 {
+    position: relative;
+    background-image: linear-gradient($light, $white);
+    &__left-img {
+        width: 140px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    &__right-img {
+        width: 100px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
