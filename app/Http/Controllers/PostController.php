@@ -84,8 +84,6 @@ class PostController extends Controller
             'post' =>$post,
             'categories' => $categories,
             'cat' => $post-> category,
-
-
         ]);
     }
 

@@ -46,22 +46,28 @@ class UserController extends Controller
         $request->validate([
             "name"   =>'required',
             'email'  =>'email|unique:App\Models\User',
-            'photo' =>'required|image',
+            'photo' =>'required|mimes:jpg,jpeg,png',
             'password'=>'min:8|required|confirmed',
+            'password_confirmation' => 'min:8|required'
 
         ]);
 
-        $name       = $request->name;
-        $username   = implode('-',explode(' ',trim (strtolower($name)) ) );
-        $email      = $request->email;
-        $password   = $request->password;
-        $repassword = $request->repassword;
+        $user = new User;
 
-        if($password == $repassword){
+        $user->name       = $request->name;
+        $user->username   = implode('-',explode(' ',trim (strtolower($request->name)) ) );
+        $user->email      = $request->email;
+        $user->password   = bcrypt($request->password);
 
-        }else{
-            return "password does not match";
-        };
+        $photo_name = $request->file('photo')->hashName();
+        $request->file('photo')->storeAs('public/images',$photo_name);
+
+        $user->photo = $photo_name;
+
+        $user->save();
+
+        return back()->with('message','User has been successfully done!!');
+
     }
 
     /**
