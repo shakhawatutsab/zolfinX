@@ -14,48 +14,42 @@
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
 
-            <h4 class="card-title">Edit Post</h4>
+            <h4 class="card-title">Edit user</h4>
             <hr>
-            <form class="forms-sample" method="POST" action="{{route('posts.update',$post->id)}}">
+            <form class="forms-sample" method="POST" action="{{route('users.update',$user->id)}}">
 
                 @csrf
                 @method('put')
                 <div class="form-group">
-                    <label for="posttitle">Post Title</label>
-                    <input type="text" name="title" class="form-control" id="posttitle" placeholder="Post Title" value="{{$post->title}}">
+                    <label for="posttitle">Full Name</label>
+                    <input type="text" name="title" class="form-control" id="posttitle" placeholder="Post Title" value="{{$user->name}}">
                 </div>
                 <div class="form-group">
-                    <label>Post Thumbnail</label>
+                    <label>User Photo</label>
                     <input type="file" name="img[]" class="file-upload-default">
                     <div class="input-group col-xs-12">
-                    <input type="text" name="thumbnail" class="form-control file-upload-info" placeholder="Post Thumbnail" value="{{$post->thumbnail}}">
+                    <input type="text" name="thumbnail" class="form-control file-upload-info" placeholder="Post Thumbnail" value="{{$user->photo}}">
                     <span class="input-group-append">
                         <button class="file-upload-browse btn btn-info" type="button">Upload</button>
                     </span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="postexcerpt">Post Excerpt</label>
-                    <textarea name="excerpt" class="form-control" id="postexcerpt" rows="2">
-                        {{$post->excerpt}}
-                    </textarea>
-                </div>
-                <div class="form-group">
-                    <label for="postcontent">Post Content</label>
-                    <textarea name="content" class="form-control" id="postcontent" rows="2">
-                        {{$post->content}}
-                    </textarea>
+                    <label for="email">Emai Address</label>
+                   <input type="text" name="email" class="form-control" id="email" placeholder="Type Emai Address" value="{{$user->email}}">
                 </div>
 
                 <div class="form-group">
-                    <label for="postcategory">Post Category</label>
-                    <select class="form-control" name="category_id" id="">
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->title }}</option>
-                        @endforeach
-                    </select>
+                    <label for="password">Password</label>
+                   <input type="text" name="password" class="form-control" id="password" placeholder="Type Password" value="">
                 </div>
-                <button type="submit" class="btn btn-success mr-2">Edit Post</button>
+
+                <div class="form-group">
+                    <label for="re-password">Re-write Password</label>
+                   <input type="text" name="re-password" class="form-control" id="re-password" placeholder="Type password again" value="">
+                </div>
+
+                <button type="submit" class="btn btn-success mr-2">Update user</button>
                 <button type="reset" class="btn btn-light">Cancel</button>
             </form>
           </div>

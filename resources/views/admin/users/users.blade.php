@@ -34,7 +34,7 @@
                     <th> User id </th>
                     <th> Thumbnail </th>
                     <th> Name </th>
-                    <th> User Name </th>
+                    <th> User name </th>
                     <th> Email </th>
                     <th> <> </th>
                   </tr>
@@ -51,8 +51,8 @@
                     <td> {{$user->username}} </td>
                     <td> {{$user->email}} </td>
                     <td>
-                        <a class="btn btn-info" href="{{route('posts.edit',$user->id)}}">Edit</a>
-                        <form method="POST"action="{{route('posts.destroy',$user->id)}} ">
+                        <a class="btn btn-info" href="{{route('users.edit',$user->id)}}">Edit</a>
+                        <form method="POST"action="{{route('users.destroy',$user->id)}} ">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>

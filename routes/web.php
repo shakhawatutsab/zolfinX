@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'],function(){
     Route::resources([
         'posts'     => PostController::class,
         'categories'=> CategoryController::class,
-        'users'     => UserController::class
+        'users'     => UserController::class,
     ]);
 });
 

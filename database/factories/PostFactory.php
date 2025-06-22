@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
                 'title'=> $this->faker->realText(30),
-                'thumbnail'=> "https://picsum.photos/600/300",
+                'thumbnail'=> $this->faker->imageUrl(640, 480, 'hill', true),
                 'excerpt' => $this->faker->sentence(),
                 'content' =>$this->faker->text(500),
                 'user_id' =>$this->faker->numberBetween(1,5),
