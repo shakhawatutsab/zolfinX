@@ -89,9 +89,34 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => 'nullable|string|min:6',
+            'photo' => 'nullable|image',
+        ]);
+
+        $user->name       = $request->name;
+        $user->username   = implode('-',explode(' ',trim (strtolower($request->name)) ) );
+        $user->email      = $request->email;
+        $user->password   = bcrypt($request->password);
+
+        if($request->file('photo') !=null){
+
+            $photo_name = $request->file('photo')->hashName();
+
+            $request->file('photo')->storeAs('public/images',$photo_name);
+
+            $user->photo = $photo_name;
+
+        }
+
+        $user->save();
+
+        return back()->with('message','User has been successfully done!!');
     }
 
     /**
@@ -103,4 +128,14 @@ class UserController extends Controller
 
         return back()->with('message','User remove successfully!');
     }
+
+    // Update Own Profile
+
+    public function myprofile(){
+
+        $user = auth()->user();
+        return view('admin.users.my-profile',compact('user'));
+    }
+
+
 }

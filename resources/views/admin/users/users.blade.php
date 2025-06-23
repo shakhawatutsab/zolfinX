@@ -45,7 +45,7 @@
                   <tr>
                     <td> {{$user->id}} </td>
                     <td class="py-1">
-                      <img class="thumb-image" src="{{$user->photo}}" alt="image" />
+                      <img class="" src="{{ asset('storage/image/' . $user->photo) }}" alt="image" />
                     </td>
                     <td> {{$user->name}} </td>
                     <td> {{$user->username}} </td>
